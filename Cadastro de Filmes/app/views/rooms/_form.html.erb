@@ -1,0 +1,139 @@
+<html>
+  <head>
+  <title>Index</title>
+   <meta charset="utf-8">
+    <title>Bootstrap, from Twitter</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    rel="stylesheet" type="text/css">
+    
+  </head>
+  <body>
+
+ <div class="navbar navbar-default navbar-static-top navbar-inverse">
+      <div class="container">
+        <div class="navbar-header">
+          <a type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse"></a>
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <a class="navbar-brand" href="">Cadastro de Filmes</a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+            <%= link_to 'Voltar', rooms_path %>
+            </li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="active">
+             <%= link_to "Inicio", root_path %>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div id="carousel-example-generic" data-interval="3000" class="carousel slide"
+          data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="item">
+                <img src="http://localhost:3000/../img/banner-1-envision-b.jpg">
+                <div class="carousel-caption">
+                  <h2 class="text-primary">Os Melhores CIneastas</h2>
+                  <p></p>
+                </div>
+              </div>
+              <div class="item">
+                <img src="http://localhost:3000/../img/Bloodborne-Personagen-Vs-Ave-Rastejante-PS4-Imagem.jpg">
+                <div class="carousel-caption">
+                  <h2>As Melhores Animações</h2>
+                  <p></p>
+                </div>
+              </div>
+              <div class="item">
+                <img src="http://localhost:3000/../img/Captain-America-Shield-1920x600.jpg">
+                <div class="carousel-caption">
+                  <h2>Os Melhores&nbsp;Blockbusters</h2>
+                  <p></p>
+                </div>
+              </div>
+              <div class="item active">
+                <img src="http://localhost:3000/../img/how-to-train-your-dragon.jpg__1920x600_q85_crop_subsampling-2_upscale.jpg">
+                <div class="carousel-caption">
+                  <h2>Os Filmes mais Emocionantes</h2>
+                  <p></p>
+                </div>
+              </div>
+            </div>
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
+          </div>
+        </div>
+      </div>
+     <!-- <div class="row">
+        <div class="col-md-4">
+          <h3 contenteditable="true" class="text-primary">Os Piguins de Madasgascar</h3>
+          <img src="http://localhost:3000/../img/penguinsdemadagascar_2.jpg"
+          class="img-responsive">
+          <a class="btn btn-primary" href="#">Ver Detalhes</a>
+        </div>
+        <div class="col-md-4">
+          <h2 class="text-primary">Dark Guardians</h2>
+          <img src="http://localhost:3000/../img/81HSY+lhmBL.jpg"
+          class="img-responsive">
+          <a class="btn btn-primary" href="#">Ver Detalhes</a>
+        </div>
+        <div class="col-md-4">
+          <h2 class="text-primary">The Last Of Us</h2>
+          <img src="http://localhost:3000/../img/the last of us 003.jpg"
+          class="img-responsive">
+          <a class="btn btn-primary" href="#">Ver Detalhes</a>
+        </div>
+      </div>
+    </div>-->
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script type="text/javascript" src="http://netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <!--<h1 align="center">Novo Filme</h1>-->
+<div class="row" class="col-md-4" align="center">
+  <h2 class="text-primary">Formulário</h2>
+  <%= form_for(@room) do |f| %>
+  <% if @room.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@room.errors.count, "error") %> prohibited this room from being saved:</h2>
+       <h2> Novo Filme</h2>
+
+      <ul>
+      <% @room.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :Filme %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :Gênero %>
+    <%= f.text_field :location %>
+  </div>
+  <div class="field">
+    <%= f.label :Descrição %><br>
+    <%= f.text_area :description %>
+  </div>
+  <div  class="actions">
+    <%= f.submit :Gravar %>
+  </div>
+</div>
+
+<% end %>
+</body>
+</html>
